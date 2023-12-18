@@ -14,9 +14,10 @@ def write_file(file_array):
     with open('todos.txt', 'w') as file:
         file.writelines(file_array)
 
-def add_new_todo(todo_array, edit_index):
-    todo = input("Enter a todo: ")  + '\n'
-    todo_array[edit_index] = todo
+def add_new_todo(todo_array, edit_index, date):
+    todo = input("Enter a todo: ")
+    todo = f"{todo} (Added: {date})\n"
+    todo_array[edit_index] = todo 
 
 def get_todo_index(action):
     index = int(input(f"Index of todo to {action}: "))

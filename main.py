@@ -1,6 +1,12 @@
+#
+import time
+
+# Local
 from modules import functions
 
 while True:
+    date = time.strftime('%d-%m-%y')
+    
     user_input = input("Type add, show, edit, complete or exit: ")
     user_input = user_input.strip()
 
@@ -10,9 +16,11 @@ while True:
         if len(user_input) > 3:
 
             #take all characters after 'add' 
-            todo = user_input[4:] + '\n'
+            todo = user_input[4:]
         else:
-            todo = input("Enter a todo: ") + '\n'
+            todo = input("Enter a todo: ")
+
+        todo = f"{todo} (Added: {date})\n"
 
         # store file data in array, append new input and write to file
         todo_array = functions.read_file()
@@ -52,23 +60,23 @@ while True:
 
                 # if input index equal to or less than size of array
                 if len(todo_array) >= edit_index:
-                    functions.add_new_todo(todo_array, edit_index)
+                    functions.add_new_todo(todo_array, edit_index, date)
                     functions.write_file(todo_array)
 
                 else:
                     edit_index = functions.get_todo_index('edit')
-                    functions.add_new_todo(todo_array, edit_index)
+                    functions.add_new_todo(todo_array, edit_index, date)
                     functions.write_file(todo_array)
             
             # if input just contains edit
             else:
                 edit_index = functions.get_todo_index('edit')
-                functions.add_new_todo(todo_array, edit_index)
+                functions.add_new_todo(todo_array, edit_index, date)
                 functions.write_file(todo_array)
 
         except:
             edit_index = functions.get_todo_index('edit')
-            functions.add_new_todo(todo_array, edit_index)
+            functions.add_new_todo(todo_array, edit_index, date)
             functions.write_file(todo_array)
 
     elif user_input.startswith('complete'):
