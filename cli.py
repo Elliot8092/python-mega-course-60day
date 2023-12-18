@@ -1,7 +1,7 @@
-#
+# Module
 import time
 
-# Local
+# Local Module
 from modules import functions
 
 while True:
