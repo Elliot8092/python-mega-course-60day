@@ -1,3 +1,5 @@
+FILEPATH ="todos.txt"
+
 def print_enum_array(list):
     """ Takes in array and prints each element with index offset by 1 """
     for index, item in enumerate(list):
