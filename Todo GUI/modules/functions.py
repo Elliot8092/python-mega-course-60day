@@ -7,13 +7,13 @@ def print_enum_array(list):
         row = f"{index + 1}-{item}"
         print(row)
 
-def read_file():
-    with open('todos.txt', 'r') as file:
+def read_file(path):
+    with open(path, 'r') as file:
         file_array = file.readlines()
     return file_array
     
-def write_file(file_array):
-    with open('todos.txt', 'w') as file:
+def write_file(file_array, path):
+    with open(path, 'w') as file:
         file.writelines(file_array)
 
 def add_new_todo(todo_array, edit_index, date):
