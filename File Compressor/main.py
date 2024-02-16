@@ -10,7 +10,7 @@ label2 = sg.Text("Select destination folder")
 input2 = sg.Input()
 choose_button2 = sg.FolderBrowse("Choose", key="folder")
 
-label3 = sg.Text("Archive Name")
+label3 = sg.Text("Archive Name               ")
 inupt3 = sg.InputText(tooltip="Enter archive name", key="name")
 compress_button = sg.Button("Compress")
 
