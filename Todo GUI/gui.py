@@ -1,9 +1,19 @@
 # Modules
 import time
 import PySimpleGUI as gui
+import os
 
 # Local Module
 from modules import functions
+
+# if file does not exist, create
+if not os.path.exists("todos.txt"):
+    with open("todos.txt", "w") as file:
+        pass
+
+if not os.path.exists("todos.txt"):
+    with open("completed.txt", "w") as file:
+        pass
 
 lable = gui.Text("Type in a to-do")
 input_box = gui.InputText(tooltip="Enter todo", key="todo")

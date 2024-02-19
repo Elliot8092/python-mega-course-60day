@@ -1,4 +1,3 @@
-
 import PySimpleGUI as sg
 from zip_creator import archive_files
 
