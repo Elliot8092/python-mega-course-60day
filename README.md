@@ -27,4 +27,8 @@ pip uninstall library_name
 # Create executable
 pyinstaller --onefile --windowed --clean main.py
 
-# pip3 install -r requirements.txt
+# Create requirments.txt with list of dependancies
+pip freeze > requirments.txt
+
+# Install all dependancies from requirements.txt
+pip3 install -r requirements.txt
