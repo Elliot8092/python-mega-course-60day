@@ -14,6 +14,7 @@ deactivate
 # Install dependencies
 pip install pysimplegui==4.60.5
 pip install pyinstaller
+pip install streamlit
 
 # Install specific version of dependancies
 pip install package_name==desired_version
@@ -32,3 +33,6 @@ pip freeze > requirments.txt
 
 # Install all dependancies from requirements.txt
 pip3 install -r requirements.txt
+
+# Run file in web using streamlit
+streamlit run file_name.py
